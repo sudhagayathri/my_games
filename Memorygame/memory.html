@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="memory.js"></script>
+<style>
+h3{
+  margin-bottom: 15px;
+}
+h4{
+  color:#4ec5e6;
+}
+.flexholder div:first-child{
+  margin-right: 30px;
+}
+.modal-footer{
+  border-top:none;
+}
+.msg > div{
+  color: red;
+  text-align: center;
+}
+.submitdiv input{
+  padding: 6px 9px;
+  font-weight: bold;
+  background-color: #30bbe2;
+  color: #fff;
+  border-color: #30bbe2;
+}
+.rowholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.eachbox {
+    width: 90px;
+    height: 90px;
+    margin: 3px;
+    background-color: #FFF;
+}
+.eachbox.paired{
+  background-color: transparent;
+  border: 1px solid #FFF;
+}
+.gridHolder{
+  background: linear-gradient(to left, rgb(148, 142, 153), rgb(46, 20, 55));
+  padding: 150px 0;
+}
+.flexholder{
+  display: flex;
+}
+.eachbox >span{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+#countdowntimer{
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  color: #FFF;
+  font-size: 24px;
+  font-weight: bold;
+}
+#countdowntimer::after {
+    content: " sec";
+}
+</style>
+</head>
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="settingsModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3 class="text-center">Game Settings</h3>
+            <div class="collectinput">
+              <h4>Grid Size(m x n)</h4>
+              <div class ="flexholder">
+                <div><input id="m_value" placeholder="Enter m value"></div>
+                <div><input id="n_value" placeholder="Enter n value"></div>
+              </div>
+              <h4>Difficulty Level</h4>
+              <div class="flexholder">
+                <div><input type="radio" name="level" value="easy" checked>Easy<br/></div>
+                <div><input type="radio" name="level" value="tough">Difficult<br/></div>
+              </div>
+            </div>
+            <div class="msg"></div>
+            <div class="modal-footer">
+              <div class="submitdiv text-center">
+                <input type="submit" class ="js-startgame" value="START GAME">
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="countdowntimer"></div>
+  <div class="gridHolder"></div>
+</body>
+</html>

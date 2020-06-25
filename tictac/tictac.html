@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="tictac.js"></script>
+<style>
+  .row{
+    width:300px;
+    margin: 130px 50% 0;
+    transform:translateX(-50%);
+  }
+  .eachrow{
+    height:100px;
+    border-bottom: 1px solid #000;
+    padding:0;
+  }
+  .eachrow:nth-of-type(3){
+    border-bottom: none;
+  }
+  .eachbox{
+    border-right:1px solid #000;
+    height:inherit;
+    cursor:pointer;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .eachbox:nth-of-type(3n){
+    border-right:none;
+  }
+  .strikethrough:before{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 50%;
+    right: 0;
+    border-top: 3px solid #f00;
+  }
+  .strikethrough.vertical::before{
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .strikethrough.crosspositive::before{
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  .strikethrough.crossnegative::before{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+      <div class="eachrow js-row1 col-lg-12">
+        <div class="col-lg-4 js-col1 js-diag1 eachbox"></div>
+        <div class="col-lg-4 js-col2 eachbox"></div>
+        <div class="col-lg-4 js-col3 js-diag2 eachbox"></div>
+      </div>
+      <div class="eachrow js-row2 col-lg-12">
+        <div class="col-lg-4 js-col1 eachbox"></div>
+        <div class="col-lg-4 js-col2 js-diag1 js-diag2 eachbox"></div>
+        <div class="col-lg-4 js-col3 eachbox"></div>
+      </div>
+      <div class="eachrow js-row3 col-lg-12">
+        <div class="col-lg-4 js-col1 js-diag2 eachbox"></div>
+        <div class="col-lg-4 js-col2 eachbox"></div>
+        <div class="col-lg-4 js-col3 js-diag1 eachbox"></div>
+      </div>
+    </div>
+</div>
+</body>
+</html>
